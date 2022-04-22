@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>{{ data['titulo'] }}</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    {{ data['projeto'] }}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="principal">
+        <div class="container">
+            <div class="conteudo">
+                <div class="conteudo_container">
+                    <div class="conteudo_header">
+                        <h2>{{ conteudo_header['titulo']}}</h2>
+                        <h5>{{ conteudo_header['sub_titulo']}}</h5>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h2>{{ conteudo_body['titulo'] }}</h2>
+                        <p>{{ conteudo_body['descricao'] }}</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h2>{{ conteudo_body['nome_lista'] }}</h2>
+                        <ul style="list-style-position: inside; margin-left:20px;">
+                            {% for value in tecnologias: %}
+                            <li>{{ value }}</li>
+                            {% endfor%}
+                        </ul>
+                    </div>
+                    <div>
+                        <p>Acesse o repositorio no <a href={{ linkgit }} style="color: red;" target="_blank">GITHUB</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imagem">
+                <div class="image_content">
+                    <img src="assets/img/calcIcon.png" alt="">
+                </div>
+                <div class="imagem_action">
+                    <p>Clique no botão abaixo para usar a calculadora^^</p>
+                    <a href="\calculadora">Acesse</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
