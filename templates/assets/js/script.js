@@ -40,6 +40,7 @@ form.addEventListener("submit", (e) => {
         fetch(URL_TO_FETCH)
             .then(response => response.json()) // retorna uma promise
             .then(result => {
+                let opeTypeOld = opeType;
                 switch (opeType) {
                     case 'soma':
                         opeType = '+';
@@ -60,9 +61,14 @@ form.addEventListener("submit", (e) => {
                 const resul = document.getElementById("resultado");
                 resul.classList.remove("none");
                 if (result['result']) {
+                
                     resul.innerHTML = `
                         <p>O resultado de ${a.value} ${opeType} ${b.value} = ${result['result']}</p>
                     `;
+
+                    a.value = "";
+                    b.value = "";
+                    document.querySelector(`input[value="${opeTypeOld}"]`).checked = false;
                 }else{
                     resul.innerHTML = `
                         <p class="error">${result['ERRO']}</p>
