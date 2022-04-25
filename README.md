@@ -1,7 +1,7 @@
 # AC3 - Desenvolvimento Web
 
 <div align="center">
-  <img src="templates/assets/img/img01.png">
+  <img src="static/assets/img/img01.png">
 </div>
 
 # 🖌️ Objetivo:
