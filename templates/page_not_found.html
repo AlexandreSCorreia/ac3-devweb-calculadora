@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page</title>
+     <!-- CSS -->
+     <link rel="stylesheet" href="{{ url_for('static', filename= 'assets/css/page_not_found.css') }}">
+</head>
+<body>
+    <section class="page-not-found">
+        <img src="{{ url_for('static', filename= 'assets/img/404.svg') }}" alt="">
+        <h1>Page Not Found</h1>
+        <p>
+            Sorry can't find the page you are looking for click <a href="/home">Here</a>
+            to conme back to home page.
+        </p>
+        <button onclick="location.href = '/home';" role="button">Back</button>
+    </section><!--page-not-found-->
+    
+</body>
+</html>

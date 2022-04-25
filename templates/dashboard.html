@@ -1,0 +1,96 @@
+{% if session['usuario_logado'] != True: %}
+    {% extends "login.html" %}
+{% else: %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename= 'assets/img/favicon.ico') }}">
+    <title>{{ data['titulo'] }}</title>
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'assets/css/painel.css') }}">
+</head>
+
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+            <i class='bx bxs-calculator'></i>
+            <span class="logo_name">PanelCalc</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/app/painel">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/app/painel">Dashboard</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bxs-navigation'></i>
+                        <span class="link_name">Pages</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Pages</a></li>
+                    <li><a href="/app/painel/pages/home">Home</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="link_name">Setting</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Setting</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <img src="{{ url_for('static', filename= 'assets/img/profile.jpg') }}" alt="profileImg">
+                    </div>
+                    <div class="name-job">
+                        <div class="profile_name">Fulano</div>
+                        <div class="job">Admin</div>
+                    </div>
+                    <a href="/app/painel/logout">
+                        <i class='bx bx-log-out'></i>
+                    </a>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+            <span class="text">Dashboard</span>
+        </div>
+
+        <div class="dash-content">
+           {% if nav == "default":%}
+           {% extends "painel_dashboard.html" %}
+           {% else: %}
+           {% extends "painel_page_home.html" %}
+           {% endif %}
+
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename= 'assets/js/painel.js') }}"></script>
+
+</body>
+
+</html>
+{% endif %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!--https://www.youtube.com/watch?v=t-EMinSz_Tk&t=15s-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename= 'assets/img/favicon.ico') }}">
+    <title>{{ data['titulo'] }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <!-- ===== ICONS ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'assets/css/login.css') }}" />
+</head>
+
+<body>
+
+    <img class="wave" src="{{ url_for('static', filename= 'assets/img/wave.png') }}" alt="">
+    <div class="container">
+        <div class="img">
+            <img src="{{ url_for('static', filename= 'assets/img/bg.svg') }}" alt="">
+        </div>
+        <!--img-->
+        <div class="login-container">
+            <form action="/login" method="post">
+                <img class="avatar" src="{{ url_for('static', filename= 'assets/img/avatar.svg') }}" alt="">
+                <h2 class="">Welcome</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <!--i-->
+                    <div>
+                        <h5>Username</h5>
+                        <input type="text" class="input" name="user">
+                    </div>
+                </div>
+                <!--input-div-->
+
+                <div class="input-div two">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <!--i-->
+                    <div>
+                        <h5>Password</h5>
+                        <input type="password" class="input" name="senha">
+                    </div>
+                </div>
+                <!--input-div-->
+                <a href="#">Forgot Password</a>
+                <input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+        <!--login-container-->
+    </div>
+    <!--container-->
+
+
+    <script src="{{ url_for('static', filename= 'assets/js/login.js') }}"></script>
+</body>
+
+</html>

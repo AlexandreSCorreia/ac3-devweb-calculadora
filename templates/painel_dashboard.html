@@ -1,0 +1,60 @@
+<div class="overview">
+    <div class="boxes">
+        <div class="box box1">
+            <i class='bx bx-trending-up'></i>
+            <span class="text">Total Views</span>
+            <span class="number">50,120</span>
+        </div>
+        <div class="box box2">
+            <i class='bx bxs-calendar'></i>
+            <span class="text">Acess Daily</span>
+            <span class="number">20,120</span>
+        </div>
+        <div class="box box3">
+            <i class='bx bxs-share'></i>
+            <span class="text">Total Share</span>
+            <span class="number">10,120</span>
+        </div>
+    </div>
+</div>
+
+<div class="activity">
+    <div class="title">
+        <i class='bx bx-history'></i>
+        <span class="text">Recent Activity</span>
+    </div>
+
+    <div class="activity-data">
+       
+        <div class="data names">
+            <span class="data-title">Name</span>
+            {% for x in data['history']: %}
+            <span class="data-list">{{ x['nome']}}</span>
+            {% endfor %}
+        </div>
+        <div class="data email">
+            <span class="data-title">Email</span>
+            {% for x in data['history']: %}
+            <span class="data-list">{{ x['email']}}</span>
+            {% endfor %}
+        </div>
+        <div class="data joined">
+            <span class="data-title">Date</span>
+            {% for x in data['history']: %}
+            <span class="data-list">{{ x['date']}}</span>
+            {% endfor %}
+        </div>
+        <div class="data type">
+            <span class="data-title">Type</span>
+            {% for x in data['history']: %}
+            <span class="data-list">{{ x['type']}}</span>
+            {% endfor %}
+        </div>
+        <div class="data status">
+            <span class="data-title">Status</span>
+            {% for x in data['history']: %}
+            <span class="data-list" style="color: red;">{{ x['status']}}</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
